@@ -1,0 +1,13 @@
+@import 'bourbon';
+@import "neat";
+
+body{
+  font-family: 'Source Code Pro', monospace;
+  background: #002b36;
+
+  color: #839496;
+}
+
+:global .outer-frame{
+  @include outer-container;
+}
