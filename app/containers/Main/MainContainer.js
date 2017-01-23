@@ -8,7 +8,8 @@ const MainContainer = React.createClass({
   render () {
     return (
       <div className={'outer-frame'}>
-        <Header />
+        <Header
+          textToDisplay={'Hello-World'}/>
       </div>
 
     )
