@@ -1,4 +1,5 @@
 import React from 'react'
+import { Header } from 'components'
 
 const MainContainer = React.createClass({
   componentDidMount(){
@@ -7,7 +8,7 @@ const MainContainer = React.createClass({
   render () {
     return (
       <div className={'outer-frame'}>
-        {"hello world"}
+        <Header />
       </div>
 
     )

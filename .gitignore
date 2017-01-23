@@ -3,3 +3,4 @@
 /*.log
 /bower_components
 /node_modules
+/tests/reports

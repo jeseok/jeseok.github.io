@@ -1,11 +1,13 @@
 @import 'bourbon';
 @import "neat";
+@import 'solarized';
+@import 'reset';
 
 body{
   font-family: 'Source Code Pro', monospace;
-  background: #002b36;
-
-  color: #839496;
+  @include solarized-dark();
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
 
 :global .outer-frame{

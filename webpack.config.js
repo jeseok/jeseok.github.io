@@ -1,29 +1,31 @@
-import webpack from 'webpack'
-import path from 'path'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import CopyWebpackPlugin from 'copy-webpack-plugin'
-import bourbon from 'node-bourbon'
-import neat from 'node-neat'
-const bourbon_path = bourbon.includePaths;
-const neat_path  = neat.includePaths[1];
+var webpack = require('webpack');
+var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var bourbon = require('node-bourbon');
+var neat = require('node-neat');
 
-const LAUNCH_COMMAND = process.env.npm_lifecycle_event
+var bourbon_path = bourbon.includePaths;
+var neat_path  = neat.includePaths[1];
+var extend = require('extend');
 
-const isProduction = LAUNCH_COMMAND === 'production'
+var LAUNCH_COMMAND = process.env.npm_lifecycle_event
+
+var isProduction = LAUNCH_COMMAND === 'production'
 process.env.BABEL_ENV = LAUNCH_COMMAND
 
-const PATHS = {
+var PATHS = {
   app: path.join(__dirname, 'app'),
   build: path.join(__dirname, 'dist'),
 }
 
-const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
+var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: PATHS.app + '/index.html',
   filename: 'index.html',
   inject: 'body'
 })
 
-const copyWebpackPlugin = new CopyWebpackPlugin([
+var copyWebpackPlugin = new CopyWebpackPlugin([
   { from: path.join(PATHS.app, '/assets'), to: path.join(PATHS.build, '/assets') },
 ],
 {
@@ -31,14 +33,13 @@ const copyWebpackPlugin = new CopyWebpackPlugin([
   copyUnmodified: false
 })
 
-const productionPlugin = new webpack.DefinePlugin({
+var productionPlugin = new webpack.DefinePlugin({
   'process.env': {
     NODE_ENV: JSON.stringify('production')
   }
 })
 
-
-const base = {
+var base = {
   entry: [
     PATHS.app
   ],
@@ -53,7 +54,14 @@ const base = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        query: {
+          presets: ['airbnb']
+        }
+      },
+      {
+        test: /\.json$/,
+        loader: 'json',
       },
       {
         test: /\.css$/,
@@ -73,12 +81,18 @@ const base = {
       }
     ]
   },
+  externals: {
+    'cheerio': 'window',
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true
+  },
   resolve: {
     root: path.resolve('./app')
   }
 }
 
-const developmentConfig = {
+var developmentConfig = {
   devtool: 'cheap-module-inline-source-map',
   devServer: {
     outputPath: PATHS.build,
@@ -86,13 +100,20 @@ const developmentConfig = {
     hot: true,
     inline: true,
     progress: true,
+    port: 3030,
   },
   plugins: [HTMLWebpackPluginConfig, copyWebpackPlugin,new webpack.HotModuleReplacementPlugin()]
 }
 
-const productionConfig = {
+var productionConfig = {
   devtool: 'cheap-module-source-map',
   plugins: [HTMLWebpackPluginConfig, copyWebpackPlugin, productionPlugin]
 }
 
-export default Object.assign({}, base, isProduction === true ? productionConfig : developmentConfig)
+var finalConfig = {};
+if (isProduction === true) {
+  extend(finalConfig, base, productionConfig)
+}else{
+  extend(finalConfig, base, developmentConfig)
+}
+module.exports = finalConfig;
