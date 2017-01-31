@@ -88,7 +88,10 @@ var base = {
     'react/lib/ReactContext': true
   },
   resolve: {
-    root: path.resolve('./app')
+    root: path.resolve('./app'),
+    alias: {
+      sharedStyles: path.join(__dirname, 'app/sharedStyles/'),
+    }
   }
 }
 

@@ -1,0 +1,36 @@
+@import 'bourbon';
+@import "neat";
+
+.mainContainer {
+  @include span-columns(6);
+  @include shift(3);
+  font-size: 14px;
+  padding: 5em 0;
+
+  @include media(min-width 320px max-width 480px, 6) {
+    @include span-columns(4);
+    @include shift(1);
+  }
+
+  .section {
+    margin-bottom: 2em;
+  }
+}
+
+.buttonContainer{
+  position: relative;
+
+  .langBtn{
+    font-size: 14px;
+    position: absolute;
+    right : -4em;
+    top:-3.5em;
+    outline: 1px solid white;
+    padding : 5px 10px;
+    text-align: center;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+}
