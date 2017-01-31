@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "production": "webpack -p",
-    "deploy": "git-directory-deploy --directory _build --branch gh-pages",
+    "deploy": "git-directory-deploy --directory dist --branch gh-pages",
     "test": "node_modules/.bin/karma start --single-run --no-auto-watch karma.config.js; exit 0",
     "test_watch": "node_modules/.bin/karma start --auto-watch --no-single-run karma.config.js"
   },
