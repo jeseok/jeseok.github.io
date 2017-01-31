@@ -16,7 +16,7 @@ process.env.BABEL_ENV = LAUNCH_COMMAND
 
 var PATHS = {
   app: path.join(__dirname, 'app'),
-  build: path.join(__dirname, 'dist'),
+  build: path.join(__dirname, ''),
 }
 
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -39,6 +39,20 @@ var productionPlugin = new webpack.DefinePlugin({
   }
 })
 
+var UglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
+  // Eliminate comments
+  comments: false,
+
+  // Compression specific options
+  compress: {
+    // remove warnings
+    warnings: false,
+
+    // Drop console statements
+    drop_console: true
+  },
+})
+
 var base = {
   entry: [
     PATHS.app
@@ -47,7 +61,7 @@ var base = {
     path: PATHS.build,
     filename: 'index_bundle.js',
     libraryTarget: "umd",
-    publicPath: '/'
+    publicPath: './'
   },
   module: {
     loaders: [
@@ -110,7 +124,7 @@ var developmentConfig = {
 
 var productionConfig = {
   devtool: 'cheap-module-source-map',
-  plugins: [HTMLWebpackPluginConfig, copyWebpackPlugin, productionPlugin]
+  plugins: [HTMLWebpackPluginConfig, copyWebpackPlugin, productionPlugin, UglifyJsPlugin]
 }
 
 var finalConfig = {};
