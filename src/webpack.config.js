@@ -16,7 +16,7 @@ process.env.BABEL_ENV = LAUNCH_COMMAND
 
 var PATHS = {
   app: path.join(__dirname, 'app'),
-  build: path.join(__dirname, ''),
+  build: path.join(__dirname, '../'),
 }
 
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
