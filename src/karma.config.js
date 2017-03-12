@@ -4,7 +4,8 @@ webpackConfig.module.loaders = [
   {
     test: /\.(js|jsx)$/, exclude: /(bower_components|node_modules)/,
     loader: 'babel-loader'
-  }
+  },
+  { test: /\.(css|scss)$/, loader: 'ignore-loader' }
 ];
 webpackConfig.module.postLoaders = [{
   test: /\.(js|jsx)$/, exclude: /(node_modules|bower_components|tests)/,

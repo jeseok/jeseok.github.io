@@ -6,8 +6,8 @@ export default {
         en: "clients experience"
       },
       work : {
-        kr : "경력",
-        en: "work experience",
+        kr : "최근 경력",
+        en: "recent work experience",
       },
       project: {
         kr : "선별된 프로젝트들",
@@ -45,7 +45,7 @@ export default {
       }
     },
     clients: [
-      'Beats by Dre','Campbell','Sunoco','Philadelphia Museum of Arts','Technical.ly(Philly)','Philadelphia International Festival of the Arts', 'Subcircle', '...'
+      'Beats by Dre','Campbell', 'Comcast', 'Sunoco','Philadelphia Museum of Arts','Technical.ly(Philly)','Philadelphia International Festival of the Arts', 'Subcircle', '...'
     ],
     specialties: [
       'iOS', 'Swift', 'Objective-C', 'Javascript', 'React', 'Python', 'OpenCV', 'OpenFrameworks', 'Arduino', '...'
@@ -72,9 +72,14 @@ export default {
     ],
     projects : [
       {
+        time: "Mar 2017",
+        title: "iPad Kiosk for Comcast NBCUniversal",
+        link : "http://www.a-g.com/thinking/2017/03/allen-and-gerritsen-crafts-success-stories-with-comcast-nbcuniversal-for-sxsw-2017/"
+      },
+      {
         time: "Nov 2016",
-        title : "Orozco Installation for Philadelphia Museum of Arts",
-        link : "https://www.instagram.com/p/BPJA2bhhxqA/",
+        title : "Installations for Philadelphia Museum of Arts",
+        link : "http://www.a-g.com/work/philadelphia-museum-of-art",
       },
       {
         time: "Feb 2015",

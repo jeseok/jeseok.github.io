@@ -13,7 +13,7 @@ const initialLevelState = {
   data: data.data
 }
 
-export default function lang (state = initialLevelState, action) {
+export default function lang (state = initialLevelState, action, test) {
   switch (action.type) {
     case CHANGE_LANG :
       return {
