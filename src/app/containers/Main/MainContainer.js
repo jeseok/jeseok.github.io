@@ -100,6 +100,7 @@ const MainContainer = React.createClass({
 function mapStateToProps(state){
   const currentLang = state.currentLang
   const data = state.data
+  console.log(data);
   return {
     currentLang: currentLang,
     data : data

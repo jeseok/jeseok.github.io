@@ -72,6 +72,11 @@ export default {
     ],
     projects : [
       {
+        time: "April 2017",
+        title: "Core Campaign site for Philadelphia Museum of Arts",
+        link : "http://www.philamuseum.org/ourfuture/"
+      },
+      {
         time: "Mar 2017",
         title: "iPad Kiosk for Comcast NBCUniversal",
         link : "http://www.a-g.com/thinking/2017/03/allen-and-gerritsen-crafts-success-stories-with-comcast-nbcuniversal-for-sxsw-2017/"

@@ -61,7 +61,7 @@ var base = {
     path: PATHS.build,
     filename: 'index_bundle.js',
     libraryTarget: "umd",
-    publicPath: './'
+    publicPath: ''
   },
   module: {
     loaders: [
