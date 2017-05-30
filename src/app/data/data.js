@@ -32,15 +32,15 @@ export default {
         en: "Jeseok Koo"
       },
       description: {
-        kr: "현재 필라델피아에 거주중인 소프트웨어 디벨로퍼 입니다. 저는 전통적인 프로그래밍 기법과 함께 현대 언어, 자동화된 태스크관리, 지속적 통합과 같은 도구들을 이용하여 테스트 가능한, 재사용이 가능한, 관리 및 확장성을 내포하는 소프트웨어를 만드는것에 매우 열정적입니다.",
-        en: "A software developer living in Philadelphia, PA. \nI’m passionate to build testable, reusable, manageable, and scalable software using classical programming practices with modern languages and tools such as automated task management and continuous integration."
+        kr: "현재 대한민국에 거주중인 소프트웨어 디벨로퍼 입니다. 저는 전통적인 프로그래밍 기법과 함께 현대 언어, 자동화된 태스크관리, 지속적 통합과 같은 도구들을 이용하여 테스트 가능한, 재사용이 가능한, 관리 및 확장성을 내포하는 소프트웨어를 만드는것에 매우 열정적입니다.",
+        en: "A software developer living in South Korea. \nI’m passionate to build testable, reusable, manageable, and scalable software using classical programming practices with modern languages and tools such as automated task management and continuous integration."
       },
       socialLink: {
         url : "https://github.com/jeseok",
         username: "@jeseok"
       },
       contact: {
-        phone: "+1 267 234 8081",
+        phone: "+82 10 4053 2493",
         email : "jeseokkoo@gmail.com"
       }
     },
@@ -52,7 +52,7 @@ export default {
     ],
     experience : [
       {
-        time: "Jan 2014 - current",
+        time: "Jan 2014 - April 2017",
         title : "Allen and Gerritsen",
         link : "http://www.a-g.com/",
         etc: "Developer"
