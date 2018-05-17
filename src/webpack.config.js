@@ -119,12 +119,12 @@ var developmentConfig = {
     progress: true,
     port: 3030,
   },
-  plugins: [HTMLWebpackPluginConfig, copyWebpackPlugin,new webpack.HotModuleReplacementPlugin()]
+  plugins: [HTMLWebpackPluginConfig, new webpack.HotModuleReplacementPlugin()]
 }
 
 var productionConfig = {
   devtool: 'cheap-module-source-map',
-  plugins: [HTMLWebpackPluginConfig, copyWebpackPlugin, productionPlugin, UglifyJsPlugin]
+  plugins: [HTMLWebpackPluginConfig, productionPlugin, UglifyJsPlugin]
 }
 
 var finalConfig = {};
