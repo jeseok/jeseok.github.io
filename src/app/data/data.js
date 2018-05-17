@@ -52,6 +52,12 @@ export default {
     ],
     experience : [
       {
+        time: "Aug 2017 - Now",
+        title : "Naver",
+        link : "https://www.navercorp.com/en/index.nhn",
+        etc: "iOS Developer"
+      },
+      {
         time: "Jan 2014 - April 2017",
         title : "Allen and Gerritsen",
         link : "http://www.a-g.com/",
